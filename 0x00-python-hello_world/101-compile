@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Get the Python file name from the environment variable
+PYFILE=$PYFILE
+
+# Check if the PYFILE environment variable is set
+if [ -z "$PYFILE" ]; then
+    echo "Error: PYFILE environment variable not set."
+    exit 1
+fi
+
+# Check if the Python file exists
+if [ ! -f "$PYFILE" ]; then
+    echo "Error: Python file '$PYFILE' not found."
+    exit 1
+fi
+
+# Compile the Python file
+python3 -m py_compile "$PYFILE"
+
+# Check if compilation was successful
+if [ $? -eq 0 ]; then
+    # Get the output filename with a .pyc extension
+    PYCFILE="${PYFILE%.py}.pyc"
+    
+    echo "Compilation successful. Output file: $PYCFILE"
+else
+    echo "Error: Compilation failed for '$PYFILE'."
+    exit 1
+fi
+

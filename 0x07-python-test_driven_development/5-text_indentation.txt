@@ -1,0 +1,44 @@
+#This is are testcases for text_indentation function
+#The function prints new line after each . or ? or :
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello?")
+Hello?
+
+#Test Case 1:
+>>> text_indentation(" Hello.")
+Hello.
+
+#Test Case 2:
+>>> text_indentation("Hello. ")
+Hello.
+
+#Test Case 3:
+>>> text_indentation(" This now. is great. ")
+This now
+
+is great
+
+
+#Test Case 4:
+>>> text_indentation("I love python, C and Java")
+I love python, C and Java
+
+#Test Case 5:
+>>> text_indentation("\nThis is a new line.")
+
+This is a new line.
+
+
+#Test Case 6:
+>>> text_indentation(7):
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+#Test Case 7:
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string

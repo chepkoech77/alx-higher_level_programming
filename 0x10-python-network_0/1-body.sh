@@ -1,3 +1,3 @@
 #!/bin/bash
-#GET request to the URL
-curl -sfL "$1" -X GET
+# Gets the body of the response
+curl -Ls "$1"
